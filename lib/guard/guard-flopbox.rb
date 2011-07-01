@@ -63,7 +63,7 @@ module Guard
       growl_opts = {
         :name    => "flopbox",
         :title   => "Flopbox: #{File.basename(pwd)}",
-        :message => mesg
+        :message => mesg,
         :image   => growl_image
       }
 
