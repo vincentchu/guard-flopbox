@@ -1,6 +1,6 @@
 # guard-flopbox
 
-Flopbox is a simple guard library that syncs local and remote directories as files are changed via SFTP. 
+Flopbox is a simple guard library that syncs local and remote directories via SFTP as files are changed. 
 
 # Usage
 
@@ -26,4 +26,4 @@ This is a sample guardfile
 
 # Author
 
-Flopbox was written by Vincent Chu and is used at Posterous. 
+Flopbox was written by Vincent Chu (vincentchu [at] gmail [dot] com) and is used at Posterous. 
