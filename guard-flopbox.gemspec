@@ -3,7 +3,7 @@ $:.push File.expand_path("../lib", __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = "guard-flopbox"
-  s.version     = 1.1 
+  s.version     = 1.4 
   s.authors     = ["Vincent Chu"]
   s.email       = ["vincentchu at gmail dot com"]
   s.homepage    = "http://github.com/vincentchu/guard-flopbox"
@@ -16,4 +16,6 @@ Gem::Specification.new do |s|
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
+
+  s.add_dependency 'net-sftp'
 end
