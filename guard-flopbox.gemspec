@@ -1,15 +1,14 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "guard-flopbox/version"
 
 Gem::Specification.new do |s|
   s.name        = "guard-flopbox"
-  s.version     = Guard::Flopbox::VERSION
-  s.authors     = ["vincentchu"]
-  s.email       = ["vince@posterous.com"]
-  s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.version     = 1.0 
+  s.authors     = ["Vincent Chu"]
+  s.email       = ["vincentchu at gmail dot com"]
+  s.homepage    = "http://github.com/vincentchu/guard-flopbox"
+  s.summary     = %q{A simple guard library for syncing local and remote directories via SFTP}
+  s.description = %q{A simple guard library for syncing local and remote directories via SFTP}
 
   s.rubyforge_project = "guard-flopbox"
 

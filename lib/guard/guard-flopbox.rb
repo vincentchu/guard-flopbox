@@ -1,16 +1,19 @@
 require 'net/sftp'
+require 'growl'
 require 'guard'
 require 'guard/guard'
 
 module Guard
   class Flopbox < Guard
 
-    attr_reader :sftp_session, :remote, :pwd
+    attr_reader :sftp_session, :remote, :pwd, :growl_image
 
     def initialize(watchers = [], options = {})
       @sftp_session = Net::SFTP.start(options[:hostname], options[:user], options[:sftp_opts])
       @remote       = options[:remote]
       @debug        = options[:debug]
+      @growl        = options[:growl]
+      @growl_image  = options[:growl_image]
       @pwd          = Dir.pwd
       
       log "Initialized with watchers = #{watchers.inspect}"
@@ -39,13 +42,32 @@ module Guard
           retry if (attempts < 3)
           log "Exceeded 3 attempts to upload #{path}"
         end
+
+        growl("Synced:\n#{paths.join("\n")}")
       end
     end
 
     private
 
+    def growl?
+      @growl || false
+    end
+
     def debug?
       @debug || false
+    end
+
+    def growl(mesg)
+      return unless growl?
+
+      growl_opts = {
+        :name    => "flopbox",
+        :title   => "Flopbox: #{File.basename(pwd)}",
+        :message => mesg
+        :image   => growl_image
+      }
+
+      Growl::Base.new(growl_opts).run
     end
 
     def log(mesg)
