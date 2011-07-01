@@ -1,0 +1,16 @@
+
+# Configuration Options for guard-flopbox
+opts = {
+  :hostname  => "postercloud.com",    # remote host 
+  :user      => "capuser",            # remote user
+  :sftp_opts => {},                   # options passed to Net::SFTP
+  :remote    => "/home/capuser/test", # remote directory
+  :debug     => true,                 # output debug information
+  :growl     => true                  # growl on completion
+}
+
+group 'flopbox' do
+  guard 'flopbox', opts do
+    watch(/.*/)
+  end
+end
