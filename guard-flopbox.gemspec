@@ -3,7 +3,7 @@ $:.push File.expand_path("../lib", __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = "guard-flopbox"
-  s.version     = 1.0 
+  s.version     = 1.1 
   s.authors     = ["Vincent Chu"]
   s.email       = ["vincentchu at gmail dot com"]
   s.homepage    = "http://github.com/vincentchu/guard-flopbox"
