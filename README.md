@@ -7,18 +7,18 @@ Flopbox is a simple guard library that syncs local and remote directories as fil
 This is a sample guardfile
 
     opts = {
-    :hostname  => "postercloud.com",    # remote host 
-    :user      => "capuser",            # remote user
-    :sftp_opts => {},                   # options passed to Net::SFTP
-    :remote    => "/home/capuser/test", # remote directory
-    :debug     => true                  # output debug information
-  }
+      :hostname  => "postercloud.com",    # remote host 
+      :user      => "capuser",            # remote user
+      :sftp_opts => {},                   # options passed to Net::SFTP
+      :remote    => "/home/capuser/test", # remote directory
+      :debug     => true                  # output debug information
+    }
 
-  group 'flopbox' do
-    guard 'flopbox', opts do
-      watch(/.*/)
+    group 'flopbox' do
+      guard 'flopbox', opts do
+        watch(/.*/)
+      end
     end
-  end
 
 # Dependencies
 
